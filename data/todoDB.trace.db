@@ -1,0 +1,58 @@
+2025-03-30 20:15:29.092826+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IS NOT EXISTS tasks (id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(60) NOT NULL DEFAULT '',desc VARCHAR(255) NOT NULL DEFAULT '',status VARCHAR(32) NOT NULL DEFAULT '')"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IS NOT EXISTS tasks (id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(60) NOT NULL DEFAULT '',desc VARCHAR(255) NOT NULL DEFAULT '',status VARCHAR(32) NOT NULL DEFAULT '')"; expected "identifier"; SQL statement:
+CREATE TABLE IS NOT EXISTS tasks (id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(60) NOT NULL DEFAULT '',desc VARCHAR(255) NOT NULL DEFAULT '',status VARCHAR(32) NOT NULL DEFAULT '') [42001-224]
+2025-03-30 23:01:57.297764+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT [*]INTOtasks (name, desk, status, VALUES (?, ?, ?)"; ожидалось "INTO"
+Syntax error in SQL statement "INSERT [*]INTOtasks (name, desk, status, VALUES (?, ?, ?)"; expected "INTO"; SQL statement:
+INSERT INTOtasks (name, desk, status, VALUES (?, ?, ?) [42001-224]
+2025-03-30 23:03:05.841999+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DESK" не найден
+Column "DESK" not found; SQL statement:
+INSERT INTO tasks (name, desk, status, VALUES (?, ?, ?) [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at org.example.Storage.addNew(Storage.java:50)
+	at org.example.Main.main(Main.java:69)
+2025-03-30 23:03:24.482560+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DESK" не найден
+Column "DESK" not found; SQL statement:
+INSERT INTO tasks (name, desk, status, VALUES (?, ?, ?) [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at org.example.Storage.addNew(Storage.java:50)
+	at org.example.Main.main(Main.java:69)
+2025-03-30 23:04:57.748599+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO tasks (name, desc, status, [*]VALUES (?, ?, ?)"; ожидалось "identifier"
+Syntax error in SQL statement "INSERT INTO tasks (name, desc, status, [*]VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
+INSERT INTO tasks (name, desc, status, VALUES (?, ?, ?) [42001-224]
